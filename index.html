@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Init4Labs | Building useful apps alongside Init4theLongHaul</title>
+  <meta name="description" content="Init4Labs builds useful apps, experiments and digital tools, including HowManySleeps and StationLog, alongside the wider Init4 ecosystem." />
+  <meta name="theme-color" content="#0f3b6d" />
+
+  <meta property="og:title" content="Init4Labs" />
+  <meta property="og:description" content="Building useful apps alongside Init4theLongHaul." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://init4labs.com" />
+
+  <link rel="icon" type="image/png" href="favicon-32.png" />
+  <link rel="apple-touch-icon" href="init4labs-logo-1024.png" />
+
+  <style>
+    :root {
+      --bg: #081a2b;
+      --panel: rgba(255,255,255,0.06);
+      --panel-strong: rgba(255,255,255,0.09);
+      --border: rgba(255,255,255,0.12);
+      --text: #f4f7fb;
+      --muted: #bfd0e4;
+      --brand-blue: #0f3b6d;
+      --brand-orange: #ff7a00;
+      --brand-orange-soft: rgba(255,122,0,0.14);
+      --shadow: 0 20px 60px rgba(0,0,0,0.28);
+      --max: 1180px;
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(255,122,0,0.10), transparent 32%),
+        radial-gradient(circle at 85% 15%, rgba(255,255,255,0.08), transparent 22%),
+        linear-gradient(180deg, #0b2c51 0%, #081a2b 100%);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .wrap {
+      width: min(calc(100% - 2rem), var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: rgba(8, 26, 43, 0.74);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .topbar-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      flex: 0 0 auto;
+    }
+
+    .brand-mark img {
+      width: 26px;
+      height: 26px;
+      object-fit: contain;
+    }
+
+    .brand-text {
+      min-width: 0;
+    }
+
+    .brand-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-subtitle {
+      color: var(--muted);
+      font-size: 0.78rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    .nav-cta {
+      padding: 0.8rem 1rem;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.10);
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .hero {
+      padding: 4.5rem 0 2.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.7rem 1rem;
+      border-radius: 999px;
+      background: var(--brand-orange-soft);
+      color: #ffd7b0;
+      border: 1px solid rgba(255,122,0,0.28);
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .eyebrow-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--brand-orange);
+      box-shadow: 0 0 18px rgba(255,122,0,0.5);
+    }
+
+    h1 {
+      margin: 1.2rem 0 0;
+      font-size: clamp(2.6rem, 6vw, 5.3rem);
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+    }
+
+    .hero-copy {
+      margin-top: 1.35rem;
+      max-width: 46rem;
+      font-size: 1.16rem;
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-top: 1.8rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      padding: 0.95rem 1.2rem;
+      border-radius: 18px;
+      font-weight: 700;
+      transition: transform 0.15s ease, opacity 0.15s ease, background 0.15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--brand-orange);
+      color: #111;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.10);
+      color: #fff;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.9rem;
+      margin-top: 1.8rem;
+      max-width: 52rem;
+    }
+
+    .stat {
+      padding: 1rem 1rem 1.05rem;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.09);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 0.96rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .hero-panel {
+      border-radius: 32px;
+      padding: 1rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.10);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-panel-inner {
+      border-radius: 24px;
+      padding: 1.3rem;
+      background: rgba(5, 12, 22, 0.48);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .panel-kicker {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .panel-title {
+      margin-top: 0.2rem;
+      font-size: 1.55rem;
+      font-weight: 700;
+    }
+
+    .panel-badge {
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(255,122,0,0.12);
+      border: 1px solid rgba(255,122,0,0.22);
+      color: #ffd7b0;
+      font-size: 0.8rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 0.8rem;
+      margin-top: 1.2rem;
+    }
+
+    .feature-item {
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+      padding: 0.95rem 1rem;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .feature-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      margin-top: 0.45rem;
+      background: var(--brand-orange);
+      flex: 0 0 auto;
+    }
+
+    .feature-item span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .hosting-note {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 18px;
+      background: rgba(255,122,0,0.10);
+      border: 1px solid rgba(255,122,0,0.20);
+      color: #ffe2c4;
+      font-size: 0.95rem;
+    }
+
+    section {
+      padding: 2rem 0 0;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 1.2rem;
+    }
+
+    .section-kicker {
+      color: #ffbf7c;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .section-head h2 {
+      margin: 0.6rem 0 0;
+      font-size: clamp(1.9rem, 4vw, 3.1rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+
+    .section-head p {
+      margin: 0.9rem 0 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 1.6rem;
+    }
+
+    .card {
+      padding: 1.35rem;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.10);
+      min-height: 100%;
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 1.18rem;
+      letter-spacing: -0.02em;
+    }
+
+    .card p {
+      margin: 0.7rem 0 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.4rem 0.72rem;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: #ffd7b0;
+      background: rgba(255,122,0,0.12);
+      border: 1px solid rgba(255,122,0,0.22);
+    }
+
+    .band {
+      margin-top: 3rem;
+      padding: 3rem 0;
+      background: rgba(255,255,255,0.04);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .pill-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.9rem;
+    }
+
+    .pill {
+      padding: 1rem 1.05rem;
+      border-radius: 18px;
+      background: rgba(5, 12, 22, 0.42);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: var(--text);
+    }
+
+    .brands {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .brand-card {
+      padding: 1.5rem;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .brand-card h3 {
+      margin: 0;
+      font-size: 1.45rem;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-card p {
+      margin: 0.8rem 0 0;
+      color: var(--muted);
+    }
+
+    .brand-card a {
+      display: inline-block;
+      margin-top: 1rem;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .contact-panel {
+      margin: 3rem 0 4rem;
+      padding: 2rem;
+      border-radius: 32px;
+      background:
+        linear-gradient(135deg, rgba(255,122,0,0.20), rgba(255,255,255,0.03) 55%, rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.10);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: end;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.95rem 1.1rem;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.12);
+      font-weight: 700;
+      color: #fff;
+    }
+
+    footer {
+      padding: 0 0 2.5rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .two-col,
+      .contact-grid,
+      .cards,
+      .brands,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-stats,
+      .pill-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      nav {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 3rem;
+      }
+
+      .topbar-inner {
+        min-height: 68px;
+      }
+
+      .brand-subtitle {
+        display: none;
+      }
+
+      .contact-panel {
+        padding: 1.35rem;
+      }
+
+      .hero-panel-inner,
+      .card,
+      .brand-card {
+        padding: 1.1rem;
+      }
+
+      h1 {
+        line-height: 1.02;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#top">
+        <div class="brand-mark">
+          <img src="favicon-32.png" alt="Init4Labs icon">
+        </div>
+        <div class="brand-text">
+          <div class="brand-title">Init4Labs</div>
+          <div class="brand-subtitle">Ideas, experiments, useful products</div>
+        </div>
+      </a>
+
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#experiments">Experiments</a>
+        <a href="#brands">Connected Brands</a>
+        <a href="#about">About</a>
+        <a class="nav-cta" href="#contact">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Home of HowManySleeps, StationLog and future lab-built products
+          </div>
+
+          <h1>Building useful apps alongside Init4theLongHaul.</h1>
+
+          <p class="hero-copy">
+            Init4Labs is the product and experimentation side of the wider Init4 ecosystem — bringing together practical app ideas, lightweight digital tools and new concepts shaped by real-world needs.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">Explore the lab</a>
+            <a class="btn btn-secondary" href="https://github.com/init4labs" target="_blank" rel="noopener">GitHub</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <strong>Real products</strong>
+              <span>Built to showcase HowManySleeps and StationLog clearly.</span>
+            </div>
+            <div class="stat">
+              <strong>Connected brands</strong>
+              <span>Designed to complement Init4theLongHaul, not compete with it.</span>
+            </div>
+            <div class="stat">
+              <strong>Fast to launch</strong>
+              <span>Static-first, lightweight and ideal for Cloudflare Pages.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <div class="hero-panel-inner">
+            <div class="panel-header">
+              <div>
+                <div class="panel-kicker">Current state</div>
+                <div class="panel-title">Version 1 website</div>
+              </div>
+              <div class="panel-badge">Live-ready</div>
+            </div>
+
+            <div class="feature-list">
+              <div class="feature-item">
+                <div class="feature-dot"></div>
+                <span>Clean public-facing brand presence for Init4Labs.</span>
+              </div>
+              <div class="feature-item">
+                <div class="feature-dot"></div>
+                <span>Featured home for HowManySleeps and StationLog.</span>
+              </div>
+              <div class="feature-item">
+                <div class="feature-dot"></div>
+                <span>Built to grow into app pages, launches and future experiments.</span>
+              </div>
+              <div class="feature-item">
+                <div class="feature-dot"></div>
+                <span>Connected naturally to Init4theLongHaul as a sister brand.</span>
+              </div>
+            </div>
+
+            <div class="hosting-note">
+              Recommended setup: Cloudflare Pages for the website, with your existing Cloudflare email routing left exactly as it is.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-kicker">Projects</div>
+          <h2>A flexible front door for the apps and experiments inside Init4Labs</h2>
+          <p>
+            This first version gives your real projects a proper home now, while leaving room for future launches, tools, workflows and case studies.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card-icon">⏳</div>
+            <h3>HowManySleeps</h3>
+            <p>
+              A simple, friendly countdown app that helps people track upcoming events, trips and important moments with less friction.
+            </p>
+            <div class="tag">Featured app</div>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🚉</div>
+            <h3>StationLog</h3>
+            <p>
+              A rail-focused tracking concept designed to help users log visits, journeys and station progress in a clean, motivating way.
+            </p>
+            <div class="tag">Featured app</div>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">⚙️</div>
+            <h3>AI Workflows</h3>
+            <p>
+              Practical experiments that combine automation, prompting and lightweight interfaces to remove friction from real tasks.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🌐</div>
+            <h3>Web Tools</h3>
+            <p>
+              Fast, clear interfaces that turn ideas and data into something genuinely usable and easy to evolve over time.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experiments" class="band">
+      <div class="wrap two-col">
+        <div class="section-head">
+          <div class="section-kicker">Experiments</div>
+          <h2>The lab mindset</h2>
+          <p>
+            Not every idea needs to become a company. Some should become a useful app, a test, a workflow or a public experiment that helps shape what Init4Labs builds next.
+          </p>
+        </div>
+
+        <div class="pill-grid">
+          <div class="pill">HowManySleeps product growth and integrations</div>
+          <div class="pill">StationLog journey and station tracking concepts</div>
+          <div class="pill">Prototype landing pages</div>
+          <div class="pill">iOS and web app concepts</div>
+          <div class="pill">Automation and workflow tests</div>
+          <div class="pill">Content and audience experiments</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="brands">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-kicker">Connected brands</div>
+          <h2>One ecosystem, two distinct roles</h2>
+          <p>
+            Init4Labs and Init4theLongHaul support each other without overlapping. One is where ideas are built into apps, tools and products. The other is where journeys, accessibility and lived experience are shared through content and storytelling.
+          </p>
+        </div>
+
+        <div class="brands">
+          <article class="brand-card">
+            <h3>Init4Labs</h3>
+            <p>
+              The product, prototype and experimentation arm — home to apps, tools, workflows and new digital ideas.
+            </p>
+            <a href="https://init4labs.com">Visit Init4Labs →</a>
+          </article>
+
+          <article class="brand-card">
+            <h3>Init4theLongHaul</h3>
+            <p>
+              The travel, accessibility and long-form storytelling brand — focused on journeys, experiences and real-world content.
+            </p>
+            <a href="https://init4thelonghaul.com" target="_blank" rel="noopener">Visit Init4theLongHaul →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-kicker">About</div>
+          <h2>Simple now, stronger later</h2>
+          <p>
+            Version 1 keeps the structure deliberately lean: clear positioning, credible design and obvious room to grow. That makes it ideal for launching quickly while keeping future options open.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <article class="card">
+            <h3>Start small</h3>
+            <p>Launch simply, learn quickly and improve based on what proves genuinely useful.</p>
+          </article>
+
+          <article class="card">
+            <h3>Build for clarity</h3>
+            <p>Prefer clean interfaces, practical outcomes and low-friction experiences over noise.</p>
+          </article>
+
+          <article class="card">
+            <h3>Stay connected</h3>
+            <p>Let Init4Labs sit naturally alongside Init4theLongHaul as part of the wider Init4 ecosystem.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact-panel">
+          <div class="contact-grid">
+            <div>
+              <div class="section-kicker">Contact</div>
+              <h2 style="margin:0.6rem 0 0; font-size: clamp(1.9rem, 4vw, 3rem); letter-spacing:-0.04em;">Ready to give Init4Labs a proper public home.</h2>
+              <p style="margin:0.9rem 0 0; color: var(--muted); max-width: 52rem;">
+                This site is structured to work beautifully as a fast static deployment on Cloudflare Pages, with GitHub as the source of truth and space to spotlight HowManySleeps and StationLog properly.
+              </p>
+            </div>
+
+            <div class="contact-links">
+              <a class="contact-link" href="mailto:hello@init4labs.com">hello@init4labs.com</a>
+              <a class="contact-link" href="https://github.com/init4labs" target="_blank" rel="noopener">github.com/init4labs</a>
+              <a class="contact-link" href="https://init4thelonghaul.com" target="_blank" rel="noopener">init4thelonghaul.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      © <span id="year"></span> Init4Labs. Built for fast deployment on Cloudflare Pages.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
