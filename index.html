@@ -30,6 +30,16 @@
       --shadow: 0 20px 60px rgba(0,0,0,0.28);
       --max: 1180px;
       --radius: 24px;
+      --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-brand: "Gordita", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    @font-face {
+      font-family: "Gordita";
+      src: url("fonts/Gordita-Regular.otf") format("opentype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
     }
 
     * {
@@ -42,7 +52,7 @@
 
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: var(--font-body);
       background:
         radial-gradient(circle at top left, rgba(255,122,0,0.10), transparent 32%),
         radial-gradient(circle at 85% 15%, rgba(255,255,255,0.08), transparent 22%),
@@ -108,12 +118,14 @@
     }
 
     .brand-title {
+      font-family: var(--font-brand);
       font-size: 1rem;
-      font-weight: 700;
+      font-weight: 400;
       letter-spacing: -0.02em;
     }
 
     .brand-subtitle {
+      font-family: var(--font-brand);
       color: var(--muted);
       font-size: 0.78rem;
       white-space: nowrap;
@@ -125,6 +137,7 @@
       display: flex;
       align-items: center;
       gap: 1.2rem;
+      font-family: var(--font-brand);
       font-size: 0.95rem;
       color: var(--muted);
     }
@@ -159,11 +172,12 @@
       gap: 0.55rem;
       padding: 0.7rem 1rem;
       border-radius: 999px;
+      font-family: var(--font-brand);
       background: var(--brand-orange-soft);
       color: #ffd7b0;
       border: 1px solid rgba(255,122,0,0.28);
       font-size: 0.92rem;
-      font-weight: 600;
+      font-weight: 400;
     }
 
     .eyebrow-dot {
@@ -176,9 +190,16 @@
 
     h1 {
       margin: 1.2rem 0 0;
+      font-family: var(--font-brand);
+      font-weight: 400;
       font-size: clamp(2.6rem, 6vw, 5.3rem);
       line-height: 0.98;
       letter-spacing: -0.05em;
+    }
+
+    h2 {
+      font-family: var(--font-brand);
+      font-weight: 400;
     }
 
     .hero-copy {
@@ -202,7 +223,8 @@
       gap: 0.55rem;
       padding: 0.95rem 1.2rem;
       border-radius: 18px;
-      font-weight: 700;
+      font-family: var(--font-brand);
+      font-weight: 400;
       transition: transform 0.15s ease, opacity 0.15s ease, background 0.15s ease;
     }
 
@@ -341,15 +363,18 @@
     }
 
     .section-kicker {
+      font-family: var(--font-brand);
       color: #ffbf7c;
       text-transform: uppercase;
       letter-spacing: 0.22em;
       font-size: 0.8rem;
-      font-weight: 700;
+      font-weight: 400;
     }
 
     .section-head h2 {
       margin: 0.6rem 0 0;
+      font-family: var(--font-brand);
+      font-weight: 400;
       font-size: clamp(1.9rem, 4vw, 3.1rem);
       line-height: 1.08;
       letter-spacing: -0.04em;
@@ -390,6 +415,8 @@
 
     .card h3 {
       margin: 0;
+      font-family: var(--font-brand);
+      font-weight: 400;
       font-size: 1.18rem;
       letter-spacing: -0.02em;
     }
@@ -405,8 +432,9 @@
       margin-top: 1rem;
       padding: 0.4rem 0.72rem;
       border-radius: 999px;
+      font-family: var(--font-brand);
       font-size: 0.76rem;
-      font-weight: 700;
+      font-weight: 400;
       color: #ffd7b0;
       background: rgba(255,122,0,0.12);
       border: 1px solid rgba(255,122,0,0.22);
@@ -421,7 +449,7 @@
 
     .card-link {
       color: #fff;
-      font-weight: 700;
+      font-weight: 400;
       font-size: 0.92rem;
     }
 
@@ -474,6 +502,8 @@
 
     .brand-card h3 {
       margin: 0;
+      font-family: var(--font-brand);
+      font-weight: 400;
       font-size: 1.45rem;
       letter-spacing: -0.03em;
     }
@@ -486,8 +516,9 @@
     .brand-card a {
       display: inline-block;
       margin-top: 1rem;
+      font-family: var(--font-brand);
       color: #fff;
-      font-weight: 700;
+      font-weight: 400;
     }
 
     .about-grid {

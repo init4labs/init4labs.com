@@ -14,11 +14,20 @@
       --panel: rgba(255,255,255,0.06);
       --border: rgba(255,255,255,0.12);
       --brand-orange: #ff7a00;
+      --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-brand: "Gordita", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+    }
+    @font-face {
+      font-family: "Gordita";
+      src: url("/fonts/Gordita-Regular.otf") format("opentype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: var(--font-body);
       line-height: 1.6;
       color: var(--text);
       background: linear-gradient(180deg, #0b2c51 0%, #081a2b 100%);
@@ -29,6 +38,8 @@
     .crumb { color: var(--muted); font-size: 0.95rem; }
     h1 {
       margin: 0.8rem 0 0;
+      font-family: var(--font-brand);
+      font-weight: 400;
       font-size: clamp(2.3rem, 6vw, 4rem);
       line-height: 1;
       letter-spacing: -0.05em;
@@ -41,7 +52,12 @@
       background: var(--panel);
       border: 1px solid var(--border);
     }
-    h2 { margin: 0 0 0.8rem; font-size: 1.35rem; }
+    h2 {
+      margin: 0 0 0.8rem;
+      font-family: var(--font-brand);
+      font-weight: 400;
+      font-size: 1.35rem;
+    }
     ul { margin: 0; padding-left: 1.2rem; color: var(--muted); }
     .actions {
       display: flex;
@@ -55,7 +71,8 @@
       border-radius: 18px;
       background: rgba(255,255,255,0.09);
       border: 1px solid rgba(255,255,255,0.10);
-      font-weight: 700;
+      font-family: var(--font-brand);
+      font-weight: 400;
       text-decoration: none;
     }
     .highlight {
