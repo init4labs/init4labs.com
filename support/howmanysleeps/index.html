@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HowManySleeps Support | Init4Labs</title>
+  <meta name="description" content="Support information for the HowManySleeps app." />
+  <link rel="icon" type="image/png" href="/favicon-32.png" />
+  <style>
+    :root {
+      --bg: #081a2b;
+      --text: #f4f7fb;
+      --muted: #bfd0e4;
+      --panel: rgba(255,255,255,0.06);
+      --border: rgba(255,255,255,0.12);
+      --brand-orange: #ff7a00;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: linear-gradient(180deg, #0b2c51 0%, #081a2b 100%);
+    }
+    a { color: inherit; }
+    .wrap { width: min(calc(100% - 2rem), 900px); margin: 0 auto; }
+    header, main, footer { padding: 2rem 0; }
+    .crumb { color: var(--muted); font-size: 0.95rem; }
+    h1 {
+      margin: 0.8rem 0 0;
+      font-size: clamp(2.3rem, 6vw, 4rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+    .lead { color: var(--muted); font-size: 1.06rem; max-width: 42rem; }
+    .panel {
+      margin-top: 1.5rem;
+      padding: 1.4rem;
+      border-radius: 24px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+    }
+    h2 { margin: 0 0 0.8rem; font-size: 1.35rem; }
+    ul { margin: 0; padding-left: 1.2rem; color: var(--muted); }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-top: 1.2rem;
+    }
+    .actions a {
+      display: inline-flex;
+      padding: 0.95rem 1.1rem;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.10);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .highlight {
+      color: #111;
+      background: var(--brand-orange);
+    }
+    footer { color: var(--muted); font-size: 0.92rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="crumb"><a href="/">Init4Labs</a> / HowManySleeps support</div>
+      <h1>HowManySleeps support</h1>
+      <p class="lead">
+        This page is the public support URL for HowManySleeps. If you need help with the app, reminders, widgets or shared Widgit links, start here.
+      </p>
+      <div class="actions">
+        <a class="highlight" href="mailto:hello@init4labs.com?subject=HowManySleeps%20Support">Email support</a>
+        <a href="/privacy/howmanysleeps/">Privacy policy</a>
+        <a href="/howmanysleeps/">App page</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <section class="panel">
+        <h2>Support contact</h2>
+        <ul>
+          <li>Email: <a href="mailto:hello@init4labs.com">hello@init4labs.com</a></li>
+          <li>Website: <a href="https://init4labs.com/howmanysleeps/">https://init4labs.com/howmanysleeps/</a></li>
+        </ul>
+      </section>
+
+      <section class="panel">
+        <h2>Common help topics</h2>
+        <ul>
+          <li>Reminders are not arriving: check in-app reminders plus iOS notification permissions.</li>
+          <li>Widgets look out of date: open the app to refresh the widget snapshot and allow iOS time to update.</li>
+          <li>Shared Widgit links did not prefill: reopen the app once and check that the shared URL is a valid Widgit Online document link.</li>
+          <li>Can’t edit or delete: review the current PIN and permission mode in Settings.</li>
+        </ul>
+      </section>
+
+      <section class="panel">
+        <h2>Before you contact support</h2>
+        <ul>
+          <li>Include your device model and iOS or iPadOS version.</li>
+          <li>Describe what you expected to happen and what happened instead.</li>
+          <li>If the issue involves reminders or widgets, mention whether the app was recently updated.</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      © <span id="year"></span> Init4Labs.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

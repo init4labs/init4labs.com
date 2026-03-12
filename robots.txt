@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://init4labs.com/sitemap.xml
