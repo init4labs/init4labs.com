@@ -119,14 +119,24 @@
           <li><strong>Beta timetable imports:</strong> if a shared Widgit link did not prefill, open the app once and check that the link is a valid Widgit Online document URL. This beta feature’s inclusion at launch is awaiting permission; HowManySleeps is not affiliated with or endorsed by Widgit.</li>
           <li><strong>Can’t add, edit or delete:</strong> check Standard User Permissions in Settings. Read Only prevents changes; Add Only allows new events but prevents editing or deleting existing ones. The superuser can apply a different permission level with the PIN.</li>
           <li><strong>Forgotten PIN:</strong> use the recovery option under Reset Superuser PIN and authenticate with your device. The PIN controls editing on this device; it does not hide event details in the app, widgets, notifications or backups.</li>
-          <li><strong>An event seems to be missing:</strong> tap the up/down arrows beside <strong>+</strong> and set <strong>Show</strong> to <strong>All</strong>. Filtering does not delete events. Repeating events move on to today or their next occurrence; earlier repeats are not shown in <strong>Past</strong>. <a href="/howmanysleeps/getting-started/#sort-and-filter">See the sort and filter guide.</a></li>
+          <li><strong>An event seems to be missing:</strong> tap the up/down arrows beside <strong>+</strong> and set <strong>Show</strong> to <strong>All</strong>. Filtering does not delete events. In the current distributed build (13), repeating events move on to today or their next occurrence; earlier repeats are not shown in <strong>Past</strong>. <a href="/howmanysleeps/getting-started/#sort-and-filter">See the sort and filter guide, including the planned history change in build 14.</a></li>
         </ul>
       </section>
 
-      <section class="panel">
+      <section class="panel" id="sort-and-filter">
         <h2>Sorting and filtering your events</h2>
         <p>Tap the up/down arrows beside <strong>+</strong> on the event list. Sort by <strong>Next Date</strong> (earliest date first), <strong>Name</strong> (A to Z), or <strong>Date Added</strong> (oldest added first). You can combine a sort order with any <strong>Show</strong> filter.</p>
-        <p><strong>Upcoming</strong> includes today and future dates. <strong>Past</strong> shows one-off events dated before today. <strong>All</strong> shows one row per saved event, not a history of every repeat. A repeating event uses today or its next occurrence, so its earlier repeats do not appear in <strong>Past</strong>.</p>
+        <p><strong>Current distributed build (13):</strong> <strong>Upcoming</strong> includes today and future dates. <strong>Past</strong> shows one-off events dated before today. <strong>All</strong> shows one row per saved event, not a history of every repeat. A repeating event uses today or its next occurrence, so its earlier repeats do not appear in <strong>Past</strong>.</p>
+        <h3>Next build (14): repeating-event history</h3>
+        <p><strong>Build 14 has not yet been uploaded or distributed.</strong> Its filters will include:</p>
+        <ul>
+          <li><strong>Upcoming:</strong> one occurrence today or next for each saved repeating series, alongside upcoming one-off events.</li>
+          <li><strong>Past:</strong> every occurrence from a repeating series’ saved start date up to yesterday, alongside past one-off events.</li>
+          <li><strong>All:</strong> those past occurrences plus the one today or next for each repeating series, alongside one-off events.</li>
+        </ul>
+        <p>Past cards will read <strong>“1 sleep ago”</strong> or <strong>“N sleeps ago”</strong>, using the number of days since that date. <strong>Next Date</strong> will still show the oldest dates first. The list loads 100 rows at a time; tap <strong>Load More Events</strong> for the next 100.</p>
+        <p>Past repeating cards will be read-only. To edit or delete the saved series, find it in <strong>Upcoming</strong> and use <strong>Edit</strong> or <strong>Delete</strong>, if your access level allows it.</p>
+        <p>History is calculated from the series’ current saved start date and repeat setting. Changing either recalculates the dates shown; these are not separate attendance records. Deleting a series also removes its past dates.</p>
         <p>Your <strong>Show</strong> choice is remembered on this device. Sorting returns to <strong>Next Date</strong> when the app restarts. <a href="/howmanysleeps/getting-started/#sort-and-filter">Read the full sort and filter instructions.</a></p>
       </section>
 
