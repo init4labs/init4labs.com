@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="canonical" href="https://init4labs.com/privacy/howmanysleeps/" />
   <title>HowManySleeps Privacy Policy | Init4Labs</title>
   <meta name="description" content="Public privacy policy for the HowManySleeps app." />
   <link rel="icon" type="image/png" href="/favicon-32.png" />
@@ -69,7 +70,7 @@
       <div class="crumb"><a href="/">Init4Labs</a> / <a href="/howmanysleeps/">HowManySleeps</a> / Privacy policy</div>
       <h1>HowManySleeps privacy policy</h1>
       <p class="lead">
-        Last updated: March 12, 2026. This page is intended to be the public privacy policy URL for the HowManySleeps app.
+        Last updated: 22 October 2026. This policy describes the current HowManySleeps app and beta features, including optional timetable imports where present.
       </p>
     </div>
   </header>
@@ -85,48 +86,53 @@
       <section class="panel">
         <h2>2. Data we process</h2>
         <ul>
-          <li>Event data you create, such as titles, dates, repeat settings, color and icon choices, and optional timetable links</li>
+          <li>Event data you create, such as titles, calendar dates, repeat settings, colour and icon choices, and optional timetable links</li>
           <li>Shared content from iOS or iPadOS share sheet imports, such as a Widgit link and page title you explicitly share to the app</li>
           <li>App settings, such as filters, palette preferences and reminder settings</li>
-          <li>Security settings, such as whether PIN protection is enabled</li>
-          <li>Optional local biometric authentication result when you choose PIN reset or authentication flows</li>
+          <li>Security settings, such as whether PIN protection is enabled, permission levels, failed PIN attempts and temporary lockout information</li>
+          <li>The success or failure of device authentication when you choose PIN recovery. Apple handles Face ID, Touch ID or device-passcode authentication; the app does not receive your biometric data or device passcode</li>
           <li>Widget snapshot data stored in the app group container so widgets can display upcoming events</li>
+          <li>Backup files you choose to export or import, containing readable event details and optional timetable links</li>
+          <li>Information you choose to send by email when asking for support</li>
         </ul>
       </section>
 
       <section class="panel">
         <h2>3. Notifications</h2>
-        <p>If you enable reminders, the app requests notification permission and schedules local notifications.</p>
+        <p>If you enable reminders, the app requests notification permission and schedules local notifications. Summaries can contain event titles and countdowns, which may be visible on your Lock Screen depending on your notification settings.</p>
         <p>You can disable notifications at any time in iOS Settings or in the app’s settings.</p>
       </section>
 
       <section class="panel">
         <h2>4. iCloud and CloudKit sync</h2>
-        <p>If iCloud sync is enabled for the app on your device, data may be synchronized using Apple CloudKit services.</p>
-        <p>Apple processes CloudKit data under Apple’s own terms and privacy policies.</p>
+        <p>Events are stored locally on your device. When iCloud is available for the app, event data may also be synchronised between your devices using Apple CloudKit and your Apple Account. You do not need a separate HowManySleeps account.</p>
+        <p>Apple processes CloudKit data under <a href="https://www.apple.com/legal/privacy/">Apple’s privacy policy</a> and its applicable service terms. Local settings and PIN protection are managed on each device.</p>
       </section>
 
       <section class="panel">
-        <h2>5. Data sharing, selling and tracking</h2>
+        <h2>5. External links, support and tracking</h2>
         <p>We do not sell your personal data.</p>
-        <p>We do not use third-party advertising SDKs in the app codebase.</p>
+        <p>In beta builds that include Widgit Online imports, the share extension may request the page you explicitly share to find its direct document link. Opening a timetable also connects to the external website. That service receives normal web-request information, such as your IP address, and applies its own privacy policy. HowManySleeps is not affiliated with or endorsed by Widgit.</p>
+        <p>When you choose Email Support, your email provider sends the message and any attachments you include to Init4Labs. Share only the information you want support to receive.</p>
+        <p>The app does not include third-party advertising or analytics SDKs.</p>
         <p>HowManySleeps does not track you across apps or websites for advertising purposes.</p>
       </section>
 
       <section class="panel">
         <h2>6. Data retention</h2>
-        <p>Data remains until you modify or delete it in the app, or remove app or iCloud data through Apple settings.</p>
-        <p>You can erase all events from the in-app settings.</p>
+        <p>Event data remains on your device and, where synchronised, in iCloud until you change or delete it. Deleting synced events or using Erase All Events also affects their copies on your synced devices. Removing the app does not by itself guarantee that copies in iCloud or exported backups are deleted.</p>
+        <p>Exported backup files remain wherever you saved or shared them until you delete those copies. Import Backup replaces current events, including on synced devices. Support emails remain in the support mailbox for handling your enquiry; contact us if you want to request their deletion.</p>
       </section>
 
       <section class="panel">
         <h2>7. Security</h2>
         <ul>
-          <li>iOS Keychain for PIN storage</li>
+          <li>A salted PIN hash, permission level and retry/lockout information stored in iOS Keychain</li>
           <li>iOS app sandboxing</li>
           <li>App Group container isolation for share extension and widget data handoff</li>
           <li>Apple-managed CloudKit security model</li>
         </ul>
+        <p>The superuser PIN controls editing on the device. It does not hide events in the app, widgets, notifications or exported backups. Exported backups are readable JSON files and are not encrypted by the app; keep them in a private location.</p>
         <p>No method of electronic storage is 100% secure, but reasonable safeguards are used.</p>
       </section>
 
@@ -137,7 +143,10 @@
           <li>Disable reminders</li>
           <li>Remove PIN protection</li>
           <li>Remove the app and associated local data</li>
-          <li>Manage iCloud sync through Apple device settings</li>
+          <li>Manage iCloud availability through Apple device settings</li>
+          <li>Choose whether to export or share a backup, and delete saved backup copies yourself</li>
+          <li>Control Lock Screen notification previews in device settings</li>
+          <li>Choose what information to include in a support email</li>
         </ul>
       </section>
 

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="canonical" href="https://init4labs.com/support/howmanysleeps/" />
   <title>HowManySleeps Support | Init4Labs</title>
   <meta name="description" content="Support information for the HowManySleeps app." />
   <link rel="icon" type="image/png" href="/favicon-32.png" />
@@ -75,7 +76,7 @@
       font-weight: 600;
       text-decoration: none;
     }
-    .highlight {
+    .actions a.highlight {
       color: #111;
       background: var(--brand-orange);
     }
@@ -88,7 +89,7 @@
       <div class="crumb"><a href="/">Init4Labs</a> / HowManySleeps support</div>
       <h1>HowManySleeps support</h1>
       <p class="lead">
-        This page is the public support URL for HowManySleeps. If you need help with the app, reminders, widgets or shared Widgit links, start here.
+        Help with HowManySleeps events, reminders, widgets, iCloud sync, backups and PIN permissions. The app is currently in testing ahead of a planned free United Kingdom launch.
       </p>
       <div class="actions">
         <a href="/howmanysleeps/getting-started/">Getting started guide</a>
@@ -112,19 +113,36 @@
       <section class="panel">
         <h2>Common help topics</h2>
         <ul>
-          <li>Reminders are not arriving: check in-app reminders plus iOS notification permissions.</li>
+          <li><strong>Reminders are not arriving:</strong> check Daily Reminders in the app and notification permissions in your device’s Settings. Summaries include events within your chosen look-ahead window; there may be no summary on days without matching events. Open the app to refresh the schedule.</li>
+          <li><strong>Next candidate (build 11):</strong> summaries are prepared for up to 30 days. If more reminders are needed, “Refresh your event reminders” asks you to reopen the app when that schedule ends. This change is prepared for the next beta and is not yet in the distributed build.</li>
           <li>Widgets look out of date: open the app to refresh the widget snapshot and allow iOS time to update.</li>
-          <li>Shared Widgit links did not prefill: reopen the app once and check that the shared URL is a valid Widgit Online document link.</li>
-          <li>Can’t edit or delete: review the current PIN and permission mode in Settings.</li>
+          <li><strong>Beta timetable imports:</strong> if a shared Widgit link did not prefill, open the app once and check that the link is a valid Widgit Online document URL. This beta feature’s inclusion at launch is awaiting permission; HowManySleeps is not affiliated with or endorsed by Widgit.</li>
+          <li><strong>Can’t add, edit or delete:</strong> check Standard User Permissions in Settings. Read Only prevents changes; Add Only allows new events but prevents editing or deleting existing ones. The superuser can apply a different permission level with the PIN.</li>
+          <li><strong>Forgotten PIN:</strong> use the recovery option under Reset Superuser PIN and authenticate with your device. The PIN controls editing on this device; it does not hide event details in the app, widgets, notifications or backups.</li>
+          <li><strong>An event seems to be missing:</strong> set Show to All in the sort and filter menu. Upcoming hides past one-off events.</li>
         </ul>
+      </section>
+
+      <section class="panel">
+        <h2>iCloud sync</h2>
+        <p>Check that each device uses the same Apple Account, iCloud is available for HowManySleeps, and the devices have an internet connection. Open the app on both devices and allow time for sync.</p>
+        <p>If an event remains after closing and reopening the app, it has saved locally even if a sync warning is shown. If a warning persists, contact support with the exact message and app build. Export a backup before trying recovery steps.</p>
+      </section>
+
+      <section class="panel">
+        <h2>Backups and restoring events</h2>
+        <p>Use Settings → Data → Export Backup to save a copy of your events. Backup files contain readable event details and optional timetable links, so keep them somewhere private.</p>
+        <p><strong>Import Backup replaces your current events, including on synced devices.</strong> Export your current events first if you want to keep them. Erase All Events also removes synced copies.</p>
+        <p><strong>Next candidate (build 11):</strong> backups use format 2 to preserve calendar dates across time zones. Older format 1 backups are rejected with an explanatory message. If you need help moving from an older beta, contact support before changing your data.</p>
       </section>
 
       <section class="panel">
         <h2>Before you contact support</h2>
         <ul>
-          <li>Include your device model and iOS or iPadOS version.</li>
-          <li>Describe what you expected to happen and what happened instead.</li>
-          <li>If the issue involves reminders or widgets, mention whether the app was recently updated.</li>
+          <li>Include your device model, iOS or iPadOS version, and app version/build from Settings → About HowManySleeps.</li>
+          <li>Describe what you expected to happen, what happened instead, and any exact error message.</li>
+          <li>If the issue involves reminders, widgets, backups or sync, mention whether the app was recently updated.</li>
+          <li>Keep event details private: do not send your PIN or a full backup unless support specifically needs further information and you choose to share it.</li>
         </ul>
       </section>
     </div>
