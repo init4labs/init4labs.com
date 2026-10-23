@@ -70,7 +70,7 @@
       <div class="crumb"><a href="/">Init4Labs</a> / <a href="/howmanysleeps/">HowManySleeps</a> / Privacy policy</div>
       <h1>HowManySleeps privacy policy</h1>
       <p class="lead">
-        Last updated: 22 October 2026. This policy describes the current HowManySleeps app and beta features, including optional timetable imports where present.
+        Last updated: 23 October 2026. This policy describes HowManySleeps version 1.0 for iPhone and iPad.
       </p>
     </div>
   </header>
@@ -79,86 +79,68 @@
     <div class="wrap">
       <section class="panel">
         <h2>1. Introduction</h2>
-        <p>HowManySleeps ("we", "our", "us") respects your privacy. This Privacy Policy explains what data the app processes, how it is used, and your choices.</p>
-        <p>Contact: <a href="mailto:hello@init4labs.com">hello@init4labs.com</a></p>
+        <p>This policy describes HowManySleeps version 1.0 for iPhone and iPad. HowManySleeps is published by Init4Labs. Contact us at <a href="mailto:hello@init4labs.com">hello@init4labs.com</a>.</p>
       </section>
 
       <section class="panel">
-        <h2>2. Data we process</h2>
-        <ul>
-          <li>Event data you create, such as titles, calendar dates, repeat settings, colour and icon choices, and optional timetable links</li>
-          <li>Shared content from iOS or iPadOS share sheet imports, such as a Widgit link and page title you explicitly share to the app</li>
-          <li>App settings, such as filters, palette preferences and reminder settings</li>
-          <li>Security settings, such as whether PIN protection is enabled, permission levels, failed PIN attempts and temporary lockout information</li>
-          <li>The success or failure of device authentication when you choose PIN recovery. Apple handles Face ID, Touch ID or device-passcode authentication; the app does not receive your biometric data or device passcode</li>
-          <li>Widget snapshot data stored in the app group container so widgets can display upcoming events</li>
-          <li>Backup files you choose to export or import, containing readable event details and optional timetable links</li>
-          <li>Information you choose to send by email when asking for support</li>
-        </ul>
+        <h2>2. Data used by the app</h2>
+        <p>HowManySleeps uses the event information you save, including event titles, calendar dates, repeat settings, colour and symbol choices, event identifiers and ordering information, to display and organise your countdowns.</p>
+        <p>It also uses app preferences such as palettes, view filters and reminder settings. If you enable PIN protection, it uses a salted PIN hash, editing permissions, failed-attempt count and temporary lockout information stored in the device’s Keychain.</p>
+        <p>Events from earlier beta versions, or event backups you import, may also contain creator names, roles, creator or household identifiers and an avatar image. Existing creator names and avatars can appear on event cards. Version 1.0 does not provide a photo-library picker, camera or profile-creation flow.</p>
+        <p>Older beta events may retain an unused timetable-link field in local storage or iCloud until you delete those events. Version 1.0 does not display or open that link, import content from Widgit Online, or include a timetable share extension. Current backup exports omit timetable links, and restore ignores any such fields in a backup.</p>
       </section>
 
       <section class="panel">
-        <h2>3. Notifications</h2>
-        <p>If you enable reminders, the app requests notification permission and schedules local notifications. Summaries can contain event titles and countdowns, which may be visible on your Lock Screen depending on your notification settings.</p>
-        <p>You can disable notifications at any time in iOS Settings or in the app’s settings.</p>
+        <h2>3. Local storage and iCloud</h2>
+        <p>Events are stored locally. When iCloud is available for HowManySleeps, Apple CloudKit synchronises event records through your private iCloud database between devices using the same Apple Account. You do not need a separate HowManySleeps account. Private event records are not visible to Init4Labs through Apple’s developer portal, and the app does not send those records to an Init4Labs server.</p>
+        <p>Palette names, colours and your selected palette are synchronised using Apple’s iCloud key-value storage. Reminder preferences, view preferences and PIN protection are managed on each device.</p>
+        <p>Apple handles iCloud storage and synchronisation under <a href="https://www.apple.com/legal/privacy/">Apple’s privacy policy</a> and applicable service terms. iCloud synchronisation depends on your account, storage, network and device settings and is not a separate backup.</p>
       </section>
 
       <section class="panel">
-        <h2>4. iCloud and CloudKit sync</h2>
-        <p>Events are stored locally on your device. When iCloud is available for the app, event data may also be synchronised between your devices using Apple CloudKit and your Apple Account. You do not need a separate HowManySleeps account.</p>
-        <p>Apple processes CloudKit data under <a href="https://www.apple.com/legal/privacy/">Apple’s privacy policy</a> and its applicable service terms. Local settings and PIN protection are managed on each device.</p>
+        <h2>4. Widgets and notifications</h2>
+        <p>The Apple countdown widget uses a local snapshot of upcoming event details stored in the app’s shared App Group container. This lets WidgetKit display countdowns without opening the event database.</p>
+        <p>If you enable daily reminders, the app asks for notification permission and prepares local event summaries for up to 30 days. A renewal notification may ask you to reopen the app to prepare further reminders. Summaries can include event titles and countdowns. Widget and notification content may be visible on your Home Screen or Lock Screen according to your device settings.</p>
+        <p>You can disable reminders in the app or in device settings and control notification previews in device settings.</p>
       </section>
 
       <section class="panel">
-        <h2>5. External links, support and tracking</h2>
-        <p>We do not sell your personal data.</p>
-        <p>In beta builds that include Widgit Online imports, the share extension may request the page you explicitly share to find its direct document link. Opening a timetable also connects to the external website. That service receives normal web-request information, such as your IP address, and applies its own privacy policy. HowManySleeps is not affiliated with or endorsed by Widgit.</p>
-        <p>When you choose Email Support, your email provider sends the message and any attachments you include to Init4Labs. Share only the information you want support to receive.</p>
-        <p>The app does not include third-party advertising or analytics SDKs.</p>
-        <p>HowManySleeps does not track you across apps or websites for advertising purposes.</p>
+        <h2>5. PIN protection and device authentication</h2>
+        <p>The PIN controls editing on that device. It does not hide event details in the app, widgets, notifications or exported backups, and it does not encrypt exported files.</p>
+        <p>If you choose PIN recovery, Apple performs device-owner authentication using the methods available on your device, such as Face ID, Touch ID or your device passcode. HowManySleeps receives the result of that authentication; it does not receive your biometric data or device passcode. Successful recovery removes that device’s app PIN and keeps your events.</p>
       </section>
 
       <section class="panel">
-        <h2>6. Data retention</h2>
-        <p>Event data remains on your device and, where synchronised, in iCloud until you change or delete it. Deleting synced events or using Erase All Events also affects their copies on your synced devices. Removing the app does not by itself guarantee that copies in iCloud or exported backups are deleted.</p>
-        <p>Exported backup files remain wherever you saved or shared them until you delete those copies. Import Backup replaces current events, including on synced devices. Support emails remain in the support mailbox for handling your enquiry; contact us if you want to request their deletion.</p>
+        <h2>6. Backups and sharing</h2>
+        <p>You can export or import a backup through the system file interface. Current format-2 backups contain readable event details and any retained creator information or avatar image. They do not contain your app PIN or its Keychain record.</p>
+        <p>The app does not encrypt JSON backups. Save them in a private location and choose carefully where you share them. A storage provider or recipient you choose may receive a copy under its own terms and privacy policy. HowManySleeps does not automatically send backups to Init4Labs.</p>
+        <p>Import Backup replaces current events, including their copies on synchronised devices. Export your existing events first if you want to keep them.</p>
       </section>
 
       <section class="panel">
-        <h2>7. Security</h2>
-        <ul>
-          <li>A salted PIN hash, permission level and retry/lockout information stored in iOS Keychain</li>
-          <li>iOS app sandboxing</li>
-          <li>App Group container isolation for share extension and widget data handoff</li>
-          <li>Apple-managed CloudKit security model</li>
-        </ul>
-        <p>The superuser PIN controls editing on the device. It does not hide events in the app, widgets, notifications or exported backups. Exported backups are readable JSON files and are not encrypted by the app; keep them in a private location.</p>
-        <p>No method of electronic storage is 100% secure, but reasonable safeguards are used.</p>
+        <h2>7. Support, external links and diagnostics</h2>
+        <p>Email Support opens your email app with our address and a support subject. HowManySleeps does not automatically attach event data, backups or diagnostic logs. You choose what to include and whether to send the message. Init4Labs receives the sender details, message and any attachments you send and uses them to handle your enquiry. Do not send your PIN. Share only the information you want support to receive.</p>
+        <p>Support emails remain in the support mailbox for handling your enquiry. You can contact us to request deletion of information you sent to support.</p>
+        <p>Opening the support, privacy, app or publisher links opens a website. Your browser and the website’s hosting services process normal web-request information under their applicable privacy practices. Event details are not added to those links by the app.</p>
+        <p>The app uses Apple’s system logging for technical status and errors and does not include a separate diagnostic-upload service. Apple may process and share app diagnostics or statistics according to your Apple settings and the terms of services such as TestFlight. Those Apple services have their own privacy information and controls.</p>
       </section>
 
       <section class="panel">
-        <h2>8. Your choices</h2>
-        <ul>
-          <li>Edit or delete events in the app</li>
-          <li>Disable reminders</li>
-          <li>Remove PIN protection</li>
-          <li>Remove the app and associated local data</li>
-          <li>Manage iCloud availability through Apple device settings</li>
-          <li>Choose whether to export or share a backup, and delete saved backup copies yourself</li>
-          <li>Control Lock Screen notification previews in device settings</li>
-          <li>Choose what information to include in a support email</li>
-        </ul>
+        <h2>8. Advertising and tracking</h2>
+        <p>HowManySleeps does not include third-party advertising or analytics SDKs. Init4Labs does not sell your personal data or use HowManySleeps to track you across other companies’ apps or websites for advertising. Information you send for support is used for support, not advertising or marketing.</p>
       </section>
 
       <section class="panel">
-        <h2>9. Changes to this policy</h2>
-        <p>This policy may be updated from time to time. The “Last updated” date on this page will be changed when updates are made.</p>
+        <h2>9. Retention, deletion and your choices</h2>
+        <p>Event data remains on your device and, where synchronised, in iCloud until you change or delete it. Deleting events or using Delete All Events also affects their copies on synchronised devices once changes sync. Removing the app does not by itself guarantee deletion of copies in iCloud or exported backups.</p>
+        <p>Saved backups remain wherever you saved or shared them until you delete those copies. Deleting events from the app does not delete exported backup files. You can change or remove custom palettes, manage iCloud availability through Apple’s device settings, remove PIN protection, disable reminders and choose what to include in support messages. For questions about deleting information held in the support mailbox, email us.</p>
+        <p>We use Apple platform features including app sandboxing, Keychain, App Group isolation and Apple-managed iCloud services. No method of electronic storage is completely secure.</p>
       </section>
 
       <section class="panel">
-        <h2>10. Contact us</h2>
-        <p>Email: <a href="mailto:hello@init4labs.com">hello@init4labs.com</a></p>
-        <p>Support URL: <a href="https://init4labs.com/support/howmanysleeps/">https://init4labs.com/support/howmanysleeps/</a></p>
+        <h2>10. Policy changes and contact</h2>
+        <p>If these practices change, we will update this policy and its date.</p>
+        <p>Email: <a href="mailto:hello@init4labs.com">hello@init4labs.com</a><br />         Support: <a href="https://init4labs.com/support/howmanysleeps/">HowManySleeps support</a></p>
       </section>
     </div>
   </main>
