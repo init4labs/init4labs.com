@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="canonical" href="https://init4labs.com/howmanysleeps/" />
   <title>HowManySleeps | Init4Labs</title>
-  <meta name="description" content="HowManySleeps counts sleeps until important dates, trips and routines on iPhone and iPad. In testing, with a free UK launch planned. Find the guide, support and privacy policy." />
+  <meta name="description" content="HowManySleeps is a countdown app inspired by children and adults with special educational needs (SEN), and there for anyone. Free UK App Store launch planned." />
   <meta name="theme-color" content="#0f3b6d" />
   <meta property="og:title" content="HowManySleeps" />
-  <meta property="og:description" content="A friendly iPhone and iPad countdown app from Init4Labs. In testing, with a free UK launch planned." />
+  <meta property="og:description" content="A friendly countdown app inspired by children and adults with special educational needs (SEN). Free UK App Store launch planned." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://init4labs.com/howmanysleeps/" />
   <link rel="icon" type="image/png" href="/favicon-32.png" />
@@ -103,6 +103,13 @@
       border-radius: 999px;
       background: var(--brand-orange);
     }
+    .product-icon {
+      display: block;
+      width: 96px;
+      height: 96px;
+      margin-top: 1.4rem;
+      border-radius: 22px;
+    }
     h1 {
       margin: 1rem 0 0;
       font-family: var(--font-brand);
@@ -172,6 +179,36 @@
       color: var(--muted);
       font-size: 0.96rem;
     }
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.3fr;
+      align-items: start;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+    .screenshot-card {
+      margin: 0;
+      padding: 1rem;
+      border-radius: 24px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+    }
+    .screenshot-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+    .screenshot-card figcaption {
+      margin-top: 1rem;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+    .screenshot-card strong {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: var(--text);
+    }
     .meta {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -222,7 +259,8 @@
       font-size: 0.92rem;
     }
     @media (max-width: 900px) {
-      .grid, .meta { grid-template-columns: 1fr; }
+      .grid, .meta, .screenshot-grid { grid-template-columns: 1fr; }
+      .screenshot-card { width: min(100%, 420px); margin-inline: auto; }
     }
     @media (max-width: 760px) {
       nav { display: none; }
@@ -250,13 +288,14 @@
       <div class="wrap">
         <div class="eyebrow">
           <span class="dot"></span>
-          In testing · Free UK launch planned
+          Free UK App Store launch planned
         </div>
+        <img class="product-icon" src="/assets/howmanysleeps/app-icon-256.png" alt="" width="96" height="96" decoding="async" />
         <h1>HowManySleeps</h1>
         <p class="lead">
-          HowManySleeps is a friendly countdown app for upcoming dates, trips, routines and important moments. It was created with family life in mind, especially the need to reduce friction and make planning easier for a young adult with significant special needs and a learning disability. If it works clearly for us as a family, it can be useful for other people too.
+          HowManySleeps began with Kevin’s wish to make important dates easier to understand for children and adults with special educational needs (SEN). That inspiration remains at the heart of the app, while its countdowns are there for anyone who finds them useful. Add a familiar visit, birthday, trip or regular activity and see how many sleeps remain.
         </p>
-        <p class="lead"><strong>Availability:</strong> HowManySleeps is in testing and is not yet available on the App Store. The planned launch is free and United Kingdom only. We’ll add the download link here when it is available.</p>
+        <p class="lead"><strong>Availability:</strong> HowManySleeps is not yet available on the App Store. The planned launch is free and United Kingdom only. We’ll add the download link here when it is available.</p>
         <div class="actions">
           <a class="btn btn-primary" href="/howmanysleeps/getting-started/">Getting started</a>
           <a class="btn btn-secondary" href="/support/howmanysleeps/">Get support</a>
@@ -270,12 +309,33 @@
           </article>
           <article class="card">
             <h3>Built for real use</h3>
-            <p>Widgets, reminders, palettes, optional icons and PIN-protected settings are all built around everyday family routines, accessibility, and learning needs.</p>
+            <p>Widgets, reminders, palettes, optional icons and editing protection help make everyday dates feel familiar.</p>
           </article>
           <article class="card">
             <h3>Your events, your control</h3>
             <p>Keep events on your device, sync them through your Apple iCloud account when available, and export a backup from Settings.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="screenshots" aria-labelledby="screenshots-title">
+      <div class="wrap">
+        <h2 id="screenshots-title">A look inside HowManySleeps</h2>
+        <p class="lead">Example events show the app on iPhone and iPad, from the next countdown to a repeating birthday.</p>
+        <div class="screenshot-grid">
+          <figure class="screenshot-card">
+            <img src="/assets/howmanysleeps/iphone-upcoming.jpg" alt="HowManySleeps on iPhone showing a family visit in 7 sleeps, a birthday in 14 sleeps and a holiday in 30 sleeps." width="736" height="1600" loading="lazy" decoding="async" />
+            <figcaption><strong>See what’s coming next</strong>Give each event a familiar name, colour and optional icon.</figcaption>
+          </figure>
+          <figure class="screenshot-card">
+            <img src="/assets/howmanysleeps/iphone-repeat-editor.jpg" alt="The iPhone event editor showing a birthday set to repeat every year, with Colour and Icon options available." width="736" height="1600" loading="lazy" decoding="async" />
+            <figcaption><strong>Make an event repeat</strong>Choose a regular date and how often it comes around.</figcaption>
+          </figure>
+          <figure class="screenshot-card">
+            <img src="/assets/howmanysleeps/ipad-upcoming.jpg" alt="HowManySleeps on iPad showing the same three example countdowns on a larger screen." width="1200" height="1600" loading="lazy" decoding="async" />
+            <figcaption><strong>Keep dates in view on iPad</strong>The same familiar countdowns, with room for a larger view.</figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -286,8 +346,8 @@
           <h2>Why it exists</h2>
           <ul>
             <li>Created by an Air Traffic Management professional with 36 years of experience in clear, dependable systems</li>
-            <li>Shaped by family life and the need to make upcoming events easier to understand and manage</li>
-            <li>Built with my daughter in mind, then refined into something that can help other families too</li>
+            <li>Inspired by the wish to make important dates easier to understand for children and adults with special educational needs (SEN)</li>
+            <li>Shaped by family life, with countdowns for anyone who finds familiar names, colours and dates useful</li>
           </ul>
         </div>
         <div class="meta-panel">
@@ -300,13 +360,14 @@
             <li>Home Screen and Lock Screen widgets</li>
             <li>Daily reminder summaries for upcoming events</li>
             <li>Optional iCloud event sync and backup export/import</li>
-            <li>Superuser PIN and standard user permission modes</li>
+            <li>Optional PIN editing protection with Full Editing, Add Events Only and Viewing Only modes</li>
+            <li>Upcoming, Past and All views, including earlier scheduled repeating dates</li>
           </ul>
         </div>
         <div class="meta-panel">
           <h2>Availability &amp; requirements</h2>
           <ul>
-            <li>Status: in testing; App Store release pending</li>
+            <li>Status: App Store release pending</li>
             <li>Planned price: free</li>
             <li>Planned launch region: United Kingdom</li>
             <li>Platform: iPhone and iPad</li>
@@ -322,11 +383,10 @@
     <section>
       <div class="wrap">
         <div class="support-block">
-          <h2 style="margin:0; font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing:-0.04em;">Guides, support &amp; beta information</h2>
+          <h2 style="margin:0; font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing:-0.04em;">Guides &amp; support</h2>
           <p class="lead" style="margin-top:0.8rem;">
-            Start with the getting started guide, or contact us for help with your installed beta. The guide labels changes prepared for the next candidate separately from features in existing beta builds.
+            Start with the getting started guide for events, repeats, sorting, reminders, editing protection and backups. Contact us if you need help.
           </p>
-          <p class="lead"><strong>Visual timetable links:</strong> Widgit Online links and share-sheet import are present in the beta. Their inclusion in the App Store release is awaiting permission and is not confirmed. HowManySleeps is not affiliated with or endorsed by Widgit.</p>
           <div class="support-links">
             <a href="/howmanysleeps/getting-started/">Getting started guide</a>
             <a href="/support/howmanysleeps/">Support page</a>

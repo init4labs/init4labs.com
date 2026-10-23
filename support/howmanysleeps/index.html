@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="canonical" href="https://init4labs.com/support/howmanysleeps/" />
   <title>HowManySleeps Support | Init4Labs</title>
-  <meta name="description" content="Support information for the HowManySleeps app." />
+  <meta name="description" content="Help with HowManySleeps, a countdown app inspired by children and adults with special educational needs (SEN)." />
   <link rel="icon" type="image/png" href="/favicon-32.png" />
   <style>
     :root {
@@ -89,7 +89,10 @@
       <div class="crumb"><a href="/">Init4Labs</a> / HowManySleeps support</div>
       <h1>HowManySleeps support</h1>
       <p class="lead">
-        Help with HowManySleeps events, reminders, widgets, iCloud sync, backups and PIN permissions. Build 14 is available in internal TestFlight. The app is in testing ahead of a planned free United Kingdom App Store launch.
+        Help with HowManySleeps events, reminders, widgets, iCloud sync, backups and editing protection. The first App Store release is planned to be free and United Kingdom only.
+      </p>
+      <p class="lead">
+        Kevin’s inspiration for creating HowManySleeps was a wish to make important dates easier to understand for children and adults with special educational needs (SEN). Its countdowns are there for anyone who finds them useful.
       </p>
       <div class="actions">
         <a href="/howmanysleeps/getting-started/">Getting started guide</a>
@@ -114,19 +117,18 @@
         <h2>Common help topics</h2>
         <ul>
           <li><strong>Reminders are not arriving:</strong> check Daily Reminders in the app and notification permissions in your device’s Settings. Summaries include events within your chosen look-ahead window; there may be no summary on days without matching events. Open the app to refresh the schedule.</li>
-          <li><strong>Next candidate (build 11):</strong> summaries are prepared for up to 30 days. If more reminders are needed, “Refresh your event reminders” asks you to reopen the app when that schedule ends. This change is prepared for the next beta and is not yet in the distributed build.</li>
+          <li><strong>Reminder renewal:</strong> summaries are prepared for up to 30 days. If more reminders are needed, “Refresh your event reminders” asks you to reopen the app when the prepared schedule ends. Notification delivery also depends on your device settings.</li>
           <li>Widgets look out of date: open the app to refresh the widget snapshot and allow iOS time to update.</li>
-          <li><strong>Beta timetable imports:</strong> if a shared Widgit link did not prefill, open the app once and check that the link is a valid Widgit Online document URL. This beta feature’s inclusion at launch is awaiting permission; HowManySleeps is not affiliated with or endorsed by Widgit.</li>
           <li><strong>Can’t add, edit or delete:</strong> check <strong>Settings → Editing Protection</strong>. <strong>Full Editing</strong> allows all changes; <strong>Add Events Only</strong> allows new events but prevents editing and deleting; <strong>Viewing Only</strong> prevents all changes. Choose a mode, tap <strong>Save Editing Access</strong> and confirm with the PIN.</li>
           <li><strong>Forgotten PIN:</strong> open <strong>Settings → Editing Protection → Change PIN → Forgot PIN?</strong> and verify with Face ID, Touch ID or your device passcode. Recovery removes this device’s PIN, restores <strong>Full Editing</strong> and <strong>keeps all events</strong>. <a href="/howmanysleeps/getting-started/#forgotten-pin">Follow the PIN recovery steps.</a> The PIN controls editing on this device; it does not hide event details in the app, widgets, notifications or backups.</li>
-          <li><strong>An event seems to be missing:</strong> tap the up/down arrows beside <strong>+</strong> and set <strong>Show</strong> to <strong>All</strong>. Filtering does not delete events. In the current internal TestFlight build (14), earlier scheduled repeating dates appear in <strong>Past</strong> and <strong>All</strong>; <strong>Upcoming</strong> shows today or the next occurrence for each series. <a href="/howmanysleeps/getting-started/#sort-and-filter">See the sort and filter guide, including how history is calculated.</a></li>
+          <li><strong>An event seems to be missing:</strong> tap the up/down arrows beside <strong>+</strong> and set <strong>Show</strong> to <strong>All</strong>. Filtering does not delete events. Earlier scheduled repeating dates appear in <strong>Past</strong> and <strong>All</strong>; <strong>Upcoming</strong> shows today or the next occurrence for each series. <a href="/howmanysleeps/getting-started/#sort-and-filter">See the sort and filter guide, including how history is calculated.</a></li>
         </ul>
       </section>
 
       <section class="panel" id="sort-and-filter">
         <h2>Sorting and filtering your events</h2>
         <p>Tap the up/down arrows beside <strong>+</strong> on the event list. Sort by <strong>Next Date</strong> (earliest date first), <strong>Name</strong> (A to Z), or <strong>Date Added</strong> (oldest added first). You can combine a sort order with any <strong>Show</strong> filter.</p>
-        <h3>Current internal TestFlight build (14): repeating-event history</h3>
+        <h3>Repeating-event history</h3>
         <p>Its <strong>Show</strong> filters include:</p>
         <ul>
           <li><strong>Upcoming:</strong> one occurrence today or next for each saved repeating series, alongside upcoming one-off events.</li>
@@ -136,7 +138,6 @@
         <p>Past cards show <strong>“1 sleep ago”</strong> or <strong>“N sleeps ago”</strong>, using the number of days since that date. <strong>Next Date</strong> shows the oldest dates first. The list loads 100 cards at a time; tap <strong>Load More Events</strong> for the next 100.</p>
         <p>Past repeating cards are read-only. To edit or delete the saved series, find it in <strong>Upcoming</strong> and use <strong>Edit</strong> or <strong>Delete</strong>, if your access level allows it.</p>
         <p>History is calculated from the series’ current saved start date and repeat setting. Changing either recalculates the dates shown; these are not separate attendance records. Deleting a series also removes its past dates.</p>
-        <p><strong>Older beta (build 13):</strong> earlier repeats do not appear in <strong>Past</strong>, and <strong>All</strong> shows one row per saved event.</p>
         <p>Your <strong>Show</strong> choice is remembered on this device. Sorting returns to <strong>Next Date</strong> when the app restarts. <a href="/howmanysleeps/getting-started/#sort-and-filter">Read the full sort and filter instructions.</a></p>
       </section>
 
@@ -148,15 +149,15 @@
 
       <section class="panel">
         <h2>Backups and restoring events</h2>
-        <p>Use Settings → Data → Export Backup to save a copy of your events. Backup files contain readable event details and optional timetable links, so keep them somewhere private.</p>
-        <p><strong>Import Backup replaces your current events, including on synced devices.</strong> Export your current events first if you want to keep them. Erase All Events also removes synced copies.</p>
-        <p><strong>Next candidate (build 11):</strong> backups use format 2 to preserve calendar dates across time zones. Older format 1 backups are rejected with an explanatory message. If you need help moving from an older beta, contact support before changing your data.</p>
+        <p>Use <strong>Settings → Backups &amp; Your Events → Save a Backup</strong> to save a copy of your events. Backup files contain readable event details, but not app settings or your PIN, so keep them somewhere private.</p>
+        <p><strong>Restore from a Backup replaces your current events, including on synced devices.</strong> Save a current backup first if you want to keep them. Select the saved file, review the warning and choose <strong>Replace Events</strong> to continue, or <strong>Cancel</strong> to leave events unchanged. Enter your PIN if asked. Wait for <strong>Backup restored</strong> before returning to the list.</p><p><strong>Delete All Events</strong> also removes synced copies. Deleting events does not delete backup files you saved elsewhere.</p>
+        <p>Backups use format 2 to preserve calendar dates across time zones. Each file can hold up to 5,000 events and must be no larger than 5 MB. Older format 1 backups are not supported; contact support before changing your data if you need help.</p>
       </section>
 
       <section class="panel">
         <h2>Before you contact support</h2>
         <ul>
-          <li>Include your device model, iOS or iPadOS version, and app version/build from Settings → About HowManySleeps.</li>
+          <li>Include your device model, iOS or iPadOS version, and app version/build from Settings → Help &amp; About → About HowManySleeps.</li>
           <li>Describe what you expected to happen, what happened instead, and any exact error message.</li>
           <li>If the issue involves reminders, widgets, backups or sync, mention whether the app was recently updated.</li>
           <li>Keep event details private: do not send your PIN or a full backup unless support specifically needs further information and you choose to share it.</li>
