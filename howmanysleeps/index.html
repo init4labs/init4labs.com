@@ -179,6 +179,18 @@
       color: var(--muted);
       font-size: 0.96rem;
     }
+    #beta { scroll-margin-top: 90px; }
+    .beta-panel {
+      padding: clamp(1.25rem, 4vw, 2rem);
+      border: 1px solid rgba(255,122,0,0.35);
+      border-radius: 28px;
+      background: linear-gradient(135deg, rgba(255,122,0,0.08), rgba(255,255,255,0.03));
+    }
+    .beta-panel h2 { margin: 1rem 0 0; font-size: clamp(1.8rem, 4vw, 2.6rem); }
+    .beta-panel .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .beta-panel .card:last-child { grid-column: 1 / -1; }
+    .beta-note { color: var(--muted); margin: 1.5rem 0 0; max-width: 48rem; }
+    a:focus-visible { outline: 3px solid var(--brand-orange); outline-offset: 5px; }
     .screenshot-grid {
       display: grid;
       grid-template-columns: 1fr 1fr 1.3fr;
@@ -263,6 +275,7 @@
       .screenshot-card { width: min(100%, 420px); margin-inline: auto; }
     }
     @media (max-width: 760px) {
+      .beta-panel .grid { grid-template-columns: 1fr; }
       nav { display: none; }
       .hero { padding-top: 3rem; }
       .brand img { width: 154px; }
@@ -299,6 +312,7 @@
         <div class="actions">
           <a class="btn btn-primary" href="https://apps.apple.com/gb/app/howmanysleeps-by-init4labs/id6760613173">Download on the App Store</a>
           <a class="btn btn-secondary" href="/howmanysleeps/getting-started/">Getting started</a>
+          <a class="btn btn-secondary" href="#beta">What’s new in the beta</a>
           <a class="btn btn-secondary" href="/support/howmanysleeps/">Get support</a>
           <a class="btn btn-secondary" href="/privacy/howmanysleeps/">Read privacy policy</a>
         </div>
@@ -316,6 +330,42 @@
             <h3>Your events, your control</h3>
             <p>Keep events on your device, sync them through your Apple iCloud account when available, and export a backup from Settings.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="beta" aria-labelledby="beta-title">
+      <div class="wrap">
+        <div class="beta-panel">
+          <span class="eyebrow">Version 1.1 · In beta testing</span>
+          <h2 id="beta-title">What’s new in the beta</h2>
+          <p class="lead">More ways to plan familiar dates, share them with family and choose who can make changes. These features are being tested through TestFlight ahead of the next App Store update.</p>
+          <div class="grid">
+            <article class="card">
+              <h3>Repeats with an end date</h3>
+              <p>Choose when a repeating event should stop. Useful for a term of weekly activities or a regular visit that runs for a few months.</p>
+            </article>
+            <article class="card">
+              <h3>Events that last several days</h3>
+              <p>Give a holiday or trip a first and last day. A Monday–Friday event includes all five days, with four sleeps left on Monday and “Last day” on Friday.</p>
+            </article>
+            <article class="card">
+              <h3>Share an event copy</h3>
+              <p>Send an event attachment to someone else using HowManySleeps, with an optional “Shared by” name. They review it before adding their own copy; later edits stay separate.</p>
+            </article>
+            <article class="card">
+              <h3>Add and edit, without deleting</h3>
+              <p>A new access mode lets someone add events and make changes while keeping deletion protected. PIN-controlled settings remain with the PIN holder.</p>
+            </article>
+            <article class="card">
+              <h3>A consistent dark appearance</h3>
+              <p>The app keeps its dark appearance throughout, even when the device is set to light mode.</p>
+            </article>
+          </div>
+          <p class="beta-note"><strong>Already testing?</strong> Update both devices to the newest build available in TestFlight before trying event sharing. We’re checking a fix for attachments that would not open from Apple Messages. Please try sending a fresh event and let us know whether tapping it opens the review screen.</p>
+          <div class="actions">
+            <a class="btn btn-secondary" href="/support/howmanysleeps/">Share beta feedback</a>
+          </div>
         </div>
       </div>
     </section>
