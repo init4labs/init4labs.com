@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["JE67FQE8VS.com.init4labs.HowManySleeps"],
+        "components": [
+          { "/": "/howmanysleeps/share/" },
+          { "/": "/howmanysleeps/share" }
+        ]
+      }
+    ]
+  }
+}
